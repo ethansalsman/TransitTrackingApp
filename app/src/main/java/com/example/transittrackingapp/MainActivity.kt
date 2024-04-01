@@ -86,17 +86,22 @@ class MainActivity : ComponentActivity() {
                     //backgroundColor = Color.Transparent
                     actions = {
                         IconButton(onClick = { navController.navigate("map") }) {
-
+                            Icon(
+                                painterResource(id = R.drawable.map),
+                                contentDescription = "Map"
+                            )
                         }
-                        IconButton(onClick = { navController.navigate("routes") }
-
-                        ) {
-
+                        IconButton(onClick = { navController.navigate("routes") }) {
+                            Icon(
+                                painterResource(id = R.drawable.routes),
+                                contentDescription = "Route"
+                            )
                         }
-                        IconButton(onClick = { navController.navigate("alerts") }
-                        ) {
-
-
+                        IconButton(onClick = { navController.navigate("alerts") }) {
+                            Icon(
+                                painterResource(id = R.drawable.alerts),
+                                contentDescription = "Alerts"
+                            )
                         }
                     }
                 )
