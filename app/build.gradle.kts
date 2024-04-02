@@ -68,4 +68,6 @@ dependencies {
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+    implementation("com.mapbox.maps:android:11.1.0")
+    implementation(group = "org.mobilitydata", name= "gtfs-realtime-bindings", version= "0.0.8")
 }

@@ -1,5 +1,7 @@
 package com.example.transittrackingapp
 
+import android.app.Notification
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
 import  android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
@@ -32,14 +34,17 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import com.mapbox.mapboxsdk.Mapbox
 import androidx.navigation.compose.rememberNavController
 import com.example.transittrackingapp.screens.AlertsScreen
 import com.example.transittrackingapp.screens.MapScreen
@@ -51,8 +56,10 @@ import com.example.transittrackingapp.ui.theme.TransitTrackingAppTheme
 class MainActivity : ComponentActivity() {
 
     private lateinit var mainViewModel: MainViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
 
         // Instantiate ViewModel
         mainViewModel = MainViewModel()
@@ -70,6 +77,11 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+
+
+
+
+
 
 
     @OptIn(ExperimentalMaterial3Api::class)
@@ -128,3 +140,5 @@ class MainActivity : ComponentActivity() {
         }
     }
 }
+
+
