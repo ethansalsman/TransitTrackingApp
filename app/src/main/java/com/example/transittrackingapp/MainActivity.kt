@@ -44,18 +44,19 @@ import androidx.compose.ui.viewinterop.AndroidView
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.mapbox.mapboxsdk.Mapbox
+
 import androidx.navigation.compose.rememberNavController
 import com.example.transittrackingapp.screens.AlertsScreen
 import com.example.transittrackingapp.screens.MapScreen
 import com.example.transittrackingapp.screens.RoutesScreen
 import com.example.transittrackingapp.ui.theme.TransitTrackingAppTheme
-
+import com.mapbox.maps.MapView
 
 
 class MainActivity : ComponentActivity() {
 
     private lateinit var mainViewModel: MainViewModel
+    private lateinit var mapView: MapView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

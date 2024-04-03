@@ -1,5 +1,18 @@
 package com.example.transittrackingapp
 
-class MainViewModel: viewModel() {
-    Mapbox.getInstance(applicationContext, "pk.eyJ1IjoiZXRoc2FscyIsImEiOiJjbHU2MDFkZGswc3h6MmxtZzU0bDRib2VuIn0.JC26Hqy98k8xE4krmdp2SA")
+import androidx.compose.ui.layout.LayoutCoordinates
+import androidx.lifecycle.ViewModel
+import com.google.transit.realtime.GtfsRealtime
+import java.net.URL
+
+class MainViewModel : ViewModel() {
+
+    fun loadBusPositions() {
+        Thread {
+            val url = URL("https://gtfs.halifax.ca/realtime/Vehicle/VehiclePositions.pb")
+            val feed = GtfsRealtime.FeedMessage.parseFrom(url.openStream())
+
+            // rest of code goes here
+        }.start()
+    }
 }
