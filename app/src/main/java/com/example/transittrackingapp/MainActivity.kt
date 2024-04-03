@@ -62,8 +62,12 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
 
+
         // Instantiate ViewModel
         mainViewModel = MainViewModel()
+
+        // load the buses
+        mainViewModel.loadBusPositions()
 
 
         setContent {
